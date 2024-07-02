@@ -67,12 +67,12 @@ between, and it can be very specific or not very specific.
 
 - `TEST_PLATFORMS="linux" mage integration:test` to execute tests only on Linux using both AMD64 and ARM64.
 - `TEST_PLATFORMS="linux/amd64" mage integration:test` to execute tests only on Linux AMD64.
-- `TEST_PLATFORMS="linux/arm64/ubuntu mage integration:test` to execute tests only on Ubuntu ARM64.
-- `TEST_PLATFORMS="linux/amd64/ubuntu/20.04 mage integration:test` to execute tests only on Ubuntu 20.04 ARM64.
-- `TEST_PLATFORMS="windows/amd64/2022 mage integration:test` to execute tests only on Windows Server 2022.
-- `TEST_PLATFORMS="linux/amd64 windows/amd64/2022 mage integration:test` to execute tests on Linux AMD64 and Windows Server 2022.
+- `TEST_PLATFORMS="linux/arm64/ubuntu" mage integration:test` to execute tests only on Ubuntu ARM64.
+- `TEST_PLATFORMS="linux/amd64/ubuntu/20.04" mage integration:test` to execute tests only on Ubuntu 20.04 AMD64.
+- `TEST_PLATFORMS="windows/amd64/2022" mage integration:test` to execute tests only on Windows Server 2022.
+- `TEST_PLATFORMS="linux/amd64 windows/amd64/2022" mage integration:test` to execute tests on Linux AMD64 and Windows Server 2022.
 
-> **_NOTE:_**  This only filters down the tests based on the platform. It will not execute a tests on a platform unless
+> **_NOTE:_**  This only filters down the tests based on the platform. It will not execute a test on a platform unless
 > the test defines as supporting it.
 
 #### Selecting specific group
