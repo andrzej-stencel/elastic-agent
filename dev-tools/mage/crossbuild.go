@@ -355,13 +355,13 @@ func (b GolangCrossBuilder) Build() error {
 		args = append(args, "-v", "/opt/git-mirrors:/opt/git-mirrors:ro")
 	}
 
-	if !ExternalBuild {
-		beatsPath, err := filepath.Abs(filepath.Join("../beats"))
-		if err != nil {
-			return fmt.Errorf("error while reading local beats: %w", err)
-		}
-		args = append(args, "-v", fmt.Sprintf("%s:%s", beatsPath, beatsPath))
+	// if !ExternalBuild {
+	beatsPath, err := filepath.Abs(filepath.Join("../beats"))
+	if err != nil {
+		return fmt.Errorf("error while reading local beats: %w", err)
 	}
+	args = append(args, "-v", fmt.Sprintf("%s:%s", beatsPath, "/go/src/github.com/elastic/beats"))
+	// }
 
 	args = append(args,
 		"--rm",
