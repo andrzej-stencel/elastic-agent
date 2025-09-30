@@ -57,6 +57,7 @@ import (
 	elasticapmprocessor "github.com/elastic/opentelemetry-collector-components/processor/elasticapmprocessor"
 	"github.com/elastic/opentelemetry-collector-components/processor/elastictraceprocessor"
 
+	"github.com/elastic/beats/v7/x-pack/otel/processor/beatprocessor"
 	"github.com/elastic/opentelemetry-collector-components/processor/elasticinframetricsprocessor"
 
 	// Exporters:
@@ -157,6 +158,7 @@ func components(extensionFactories ...extension.Factory) func() (otelcol.Factori
 			elasticapmprocessor.NewFactory(),
 			elastictraceprocessor.NewFactory(), // deprecated, will be removed in future
 			tailsamplingprocessor.NewFactory(),
+			beatprocessor.NewFactory(),
 		)
 		if err != nil {
 			return otelcol.Factories{}, err
